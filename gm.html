@@ -1,0 +1,205 @@
+<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/23e65e807f.js"></script>
+<style type="text/css">
+
+.container
+{
+	height:126px;
+	width:126px;
+	position:relative;
+	margin:auto;
+	margin-top:100px;
+	font-family: 'Open Sans' ;
+}
+.container [data-value]
+{
+	height:calc(40px + 0.66666666px);
+	width:calc(40px + 0.66666666px) ;
+	background:white;
+	border:1px solid gray;
+	float:left;
+	border-right:none;
+	border-bottom:none;
+	font-size:30px;
+	text-align:center;
+    font-weight:bold;
+    transition:.2s;
+    box-shadow:inset 0 0 20px 0px #e3e3e387;
+
+}
+
+[data-value="3"],[data-value="6"],[data-value="9"]
+{
+	
+	border-right:1px solid gray !important
+}
+[data-value="7"],[data-value="8"],[data-value="9"]
+{
+	
+	border-bottom:1px solid gray !important
+}
+.greenME
+{
+   background:#04f100 !important;
+   color:white
+}
+.blueME
+{
+   background:#0c00ca !important;
+   color:white
+}
+.status
+{
+	position:absolute;
+	height:20px;
+	width:calc(100% - 2px);
+	border:1px solid gray;
+	bottom:0px;
+    overflow:hidden;
+    border-top:none;
+    color:black;
+    font-weight:bold;
+    font-size:15px;
+    text-align:center;
+    letter-spacing:1px;
+    transition:0.5s
+}
+.start
+{
+	position:absolute;
+	height:100%;
+	width:100%;
+	background:white;
+	z-index:1;
+	box-shadow:inset 0 0 3px 0px black;
+	overflow:hidden;
+	transition:height 0.5s
+}
+.start #title
+{
+	font-size:18px;
+	font-weight:bold;
+	text-align:center;
+	color:white;
+	-webkit-text-stroke:.01px black;
+	padding:5px ;
+	background:#c6dee559
+	
+}
+#sound,.select
+{
+	padding:10px;
+    font-size:13px;
+    color:gray;
+    padding-right:20px
+}
+#sound i
+{
+	margin-left:20px;
+	color:green;
+	padding:3px;
+	transition:.3s;
+	border-radius:100%;
+}
+#sound i:hover
+{
+	background:#8080801c;
+
+}
+#sound i:active
+{
+    background:#01010130
+}
+.select
+{
+	padding-top:0px
+}
+.select > div
+{
+	float:left;
+}
+.select > div:last-child
+{
+	background:#ebebeb;
+	width:30px;
+	height:15px;
+	overflow:hidden;
+	margin-left:15px;
+	padding-right:0px
+}
+.select > div:last-child div
+{
+	width:15px;
+	height:15px;
+	text-align:center;
+	float:left;
+	text-align:center;
+	font-weight:bold;
+	font-size:11px;
+	cursor:pointer;
+}
+.xoroselect
+{
+	background:#ff8484;
+	color:white;
+}
+button
+{
+	width:90%;
+	height:20px;
+	margin-left:5%;
+	margin-top:10px;
+	border:none;
+	color:white;
+	background:skyblue;
+	outline:none
+}
+button:hover
+{
+	background: #2fb5eb
+}
+.restart
+{
+	position:absolute;
+	padding: 5px;
+	background:#e3e3e3;
+	border-radius:100%;
+	font-size:10px;
+	color:#3a3a3a;
+	top:5px;
+	opacity:0;
+	right:-20%;
+	transition:0.5s
+}
+
+</style>
+<div class="container">
+	<div class="start">
+		<div id="title">Tic Tac Toe</div>
+		<div id="sound" onclick="soundChange()">SOUND :<i class="fas fa-volume-up" ></i></div>
+        <div class="select"><div>SELECT :</div><div>
+        	<div class="selMeX xoroselect">X</div>
+        	<div class="selMeO">O</div></div> 
+        </div>
+        <button onclick="start()">START</button>
+	</div>
+	<div class="restart" title="restart"><i class="fas fa-redo-alt"></i></div>
+	<div data-value="1"></div>
+	<div data-value="2"></div>
+	<div data-value="3"></div>
+	<div data-value="4"></div>
+	<div data-value="5"></div>
+	<div data-value="6"></div>
+	<div data-value="7"></div>
+	<div data-value="8"></div>
+	<div data-value="9"></div>
+	<div class="status"></div>
+
+</div>
+<audio id="playClick">
+	<source src="click.mp3" type="audio/mpeg">
+</audio>
+<audio id="playWin">
+	<source src="win.mp3" type="audio/mpeg">
+</audio>
+<script type="text/javascript" src="script.js"></script>
